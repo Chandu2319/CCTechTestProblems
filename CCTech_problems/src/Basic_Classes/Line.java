@@ -282,8 +282,10 @@ public class Line extends Point {
 		Line l2 = new Line(pt,this.get_edpt());
 		output_angle = l2.angle - l1.angle;
 		if(output_angle > Math.PI ){
-			output_angle = 2*Math.PI - (l1.angle + l2.angle);
+			output_angle =  output_angle - 2*Math.PI;
+		} else if (output_angle < -Math.PI){
+			output_angle = output_angle + 2*Math.PI;
 		}
-		return output_angle;
+		return output_angle*180/Math.PI;
 	}
 }

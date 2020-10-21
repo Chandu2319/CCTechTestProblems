@@ -103,6 +103,11 @@ public class Polygon {
 		return false;
 
 	}
+	
+	double distFromAPoint(Point source) {
+		// we get nearest distance when used after the execution of findNearestVertex function
+		return Point.dist_btw_2_pts(this.v_points.get(0),source);
+	}
 
 	ArrayList<Point> findNearestVertex(Point source_pt) {
 		
@@ -167,8 +172,7 @@ public class Polygon {
 				v_lines.add(new Line(v_points.get(0),l2.get_stpt()));
 			}
 		}
-		
-		
+			
 	}
 	
 	Point findBottomPoint() {
